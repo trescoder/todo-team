@@ -12,6 +12,10 @@ export class TodoService {
 
   constructor() {}
 
+  getMembers() {
+    return this.Members;
+  }
+
   addNewMember(name: string) {
     if (
       !this.Members.some((m) => m.name.toLowerCase() === name.toLowerCase())
