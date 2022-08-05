@@ -1,23 +1,28 @@
-<div>
-  <button (click)="showTaskForm = true">Add Task</button>
-  <button (click)="showTaskForm = false">Add Member</button>
-</div>
-<div>
-  <app-add-task *ngIf="showTaskForm"></app-add-task>
-  <app-add-member *ngIf="!showTaskForm"></app-add-member>
-</div>
-<div>
+<div class="container">
+  <!-- Button Sections -->
+  <div class="header-button">
+    <button (click)="showTaskForm = true">Add Task</button>
+    <button (click)="showTaskForm = false">Add Member</button>
+  </div>
+
+  <!-- Forms Section -->
+  <div class="forms">
+    <app-add-task *ngIf="showTaskForm"></app-add-task>
+    <app-add-member *ngIf="!showTaskForm"></app-add-member>
+  </div>
   <div>
-    <div *ngFor="let task of tasks">
-      <h1>{{ task.title }}</h1>
-      <p>
-        {{ task.details }}
-      </p>
-      <ul>
-        <li *ngFor="let member of task.teamMembers">
-          {{ member.name }}
-        </li>
-      </ul>
+    <div>
+      <div *ngFor="let task of tasks">
+        <h1>{{ task.title }}</h1>
+        <p>
+          {{ task.details }}
+        </p>
+        <ul>
+          <li *ngFor="let member of task.teamMembers">
+            {{ member.name }}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

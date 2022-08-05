@@ -1,0 +1,6 @@
+.container {
+  min-width: 320px;
+  width: auto;
+  max-width: 1020px;
+  background-color: aliceblue;
+}
