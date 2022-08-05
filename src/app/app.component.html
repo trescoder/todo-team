@@ -1,1 +1,8 @@
-<app-add-task></app-add-task>
+<div>
+  <button (click)="showTaskForm = true">Add Task</button>
+  <button (click)="showTaskForm = false">Add Member</button>
+</div>
+<div>
+  <app-add-task *ngIf="showTaskForm"></app-add-task>
+  <app-add-member *ngIf="!showTaskForm"></app-add-member>
+</div>
