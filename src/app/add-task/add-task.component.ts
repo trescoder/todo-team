@@ -25,13 +25,14 @@ export class AddTaskComponent implements OnInit, DoCheck {
   addTask(form: any) {
     const { taskTitle, taskDetails } = form.controls;
     if (taskTitle.errors === null && taskDetails.errors === null) {
-      if (this.members.length !== 0) {
+      if (this.taskMembers.length !== 0) {
         const task: Task = {
-          teamMembers: this.members,
+          teamMembers: this.taskMembers,
           details: taskDetails.value.trim(),
           title: taskTitle.value.trim(),
         };
         this.todoService.addNewTask(task);
+        this.taskMembers = [];
       } else {
         //todo: alert to select at least one member
       }
