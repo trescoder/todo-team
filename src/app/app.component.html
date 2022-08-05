@@ -1,24 +1,27 @@
 <div class="container">
-  <!-- Button Sections -->
-  <div class="header-button">
-    <button (click)="showTaskForm = true">Add Task</button>
-    <button (click)="showTaskForm = false">Add Member</button>
-  </div>
+  <div class="main">
+    <div class="btn-forms"></div>
+    <!-- Button Sections -->
+    <div class="header-buttons">
+      <button (click)="showTaskForm = true">Add Task</button>
+      <button (click)="showTaskForm = false">Add Member</button>
+    </div>
 
-  <!-- Forms Section -->
-  <div class="forms">
-    <app-add-task *ngIf="showTaskForm"></app-add-task>
-    <app-add-member *ngIf="!showTaskForm"></app-add-member>
-  </div>
-  <div>
-    <div>
-      <div *ngFor="let task of tasks">
-        <h1>{{ task.title }}</h1>
-        <p>
+    <!-- Forms Section -->
+    <div class="forms-container">
+      <app-add-task *ngIf="showTaskForm"></app-add-task>
+      <app-add-member *ngIf="!showTaskForm"></app-add-member>
+    </div>
+
+    <!-- Tasks Section -->
+    <div *ngIf="tasks.length > 0" class="tasks-container">
+      <div *ngFor="let task of tasks" class="task">
+        <h1 class="task-title">{{ task.title }}</h1>
+        <p class="task-details">
           {{ task.details }}
         </p>
-        <ul>
-          <li *ngFor="let member of task.teamMembers">
+        <ul class="member-list">
+          <li *ngFor="let member of task.teamMembers" class="member">
             {{ member.name }}
           </li>
         </ul>

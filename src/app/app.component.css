@@ -2,5 +2,70 @@
   min-width: 320px;
   width: auto;
   max-width: 1020px;
+  min-height: 100vh;
+  height: auto;
+  margin: 0 auto;
   background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  display: block;
+  max-width: inherit;
+  width: auto;
+  min-width: inherit;
+  padding: 5px;
+}
+
+.header-buttons {
+}
+
+.header-buttons,
+.forms-container {
+  min-width: inherit;
+  width: auto;
+  max-width: 500px;
+  margin: 10px auto;
+}
+
+.forms-container {
+  background-color: #ededed;
+  padding: 5px;
+}
+
+.tasks-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  min-width: inherit;
+  width: auto;
+  max-width: inherit;
+  /* border: 2px solid lightcoral; */
+}
+
+.task {
+  min-width: inherit;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid lightblue;
+  border-radius: 10px;
+}
+
+.task-title {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+}
+
+.task-details {
+  background-color: #c9c9c9;
+  font-size: 1.2rem;
+  padding: 4px;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
