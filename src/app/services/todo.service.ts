@@ -16,6 +16,10 @@ export class TodoService {
     return this.Members;
   }
 
+  getTasks() {
+    return this.Tasks;
+  }
+
   addNewMember(name: string) {
     if (
       !this.Members.some((m) => m.name.toLowerCase() === name.toLowerCase())
@@ -27,5 +31,9 @@ export class TodoService {
       return { msg: 'New Member Added', ok: true };
     }
     return { msg: 'This Member Already exists', ok: false };
+  }
+
+  addNewTask(task: Task) {
+    this.Tasks.push({ ...task, id: this.Tasks.length });
   }
 }

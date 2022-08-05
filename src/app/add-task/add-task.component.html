@@ -22,7 +22,9 @@
   <!-- Members Section -->
   <div>
     <ul>
-      <li *ngFor="let member of members">{{ member.name }}</li>
+      <li *ngFor="let member of members" (click)="selectedMember(member)">
+        {{ member.name }}
+      </li>
     </ul>
   </div>
   <!-- <div></div> -->
