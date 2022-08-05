@@ -6,3 +6,18 @@
   <app-add-task *ngIf="showTaskForm"></app-add-task>
   <app-add-member *ngIf="!showTaskForm"></app-add-member>
 </div>
+<div>
+  <div>
+    <div *ngFor="let task of tasks">
+      <h1>{{ task.title }}</h1>
+      <p>
+        {{ task.details }}
+      </p>
+      <ul>
+        <li *ngFor="let member of task.teamMembers">
+          {{ member.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
