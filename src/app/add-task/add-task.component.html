@@ -1,1 +1,27 @@
-<p>add-task works!</p>
+<form #addTaskForm="ngForm" (ngSubmit)="addTask(addTaskForm)">
+  <div>
+    <label for="title">Title</label>
+    <input
+      type="text"
+      id="task-title"
+      name="taskTitle"
+      placeholder="task title"
+      required
+      ngModel
+    />
+    <textarea
+      name="taskDetails"
+      id="task-details"
+      placeholder="enter a description about the task"
+      cols="30"
+      rows="10"
+      required
+      ngModel
+    ></textarea>
+  </div>
+  <!-- Members Section -->
+  <!-- <div></div> -->
+  <div>
+    <button type="submit">Add Task</button>
+  </div>
+</form>
