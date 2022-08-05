@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoService } from '../services/todo.service';
 
 @Component({
   selector: 'app-add-member',
@@ -6,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-member.component.css'],
 })
 export class AddMemberComponent implements OnInit {
-  constructor() {}
+  constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {}
 
-  addMember(form: any) {}
+  addMember(form: any) {
+    const { member } = form.controls;
+
+    if (member.errors === null) {
+      this.todoService.addNewMember(member.value);
+    }
+  }
 }
