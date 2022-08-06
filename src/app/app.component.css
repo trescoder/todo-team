@@ -20,9 +20,6 @@
   padding: 5px;
 }
 
-.header-buttons {
-}
-
 .header-buttons,
 .forms-container {
   min-width: inherit;
@@ -48,7 +45,7 @@
 }
 
 .task {
-  min-width: inherit;
+  width: 320px;
   padding: 5px;
   margin: 5px;
   border: 2px solid lightblue;
