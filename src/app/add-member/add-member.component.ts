@@ -11,11 +11,16 @@ export class AddMemberComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addMember(form: any) {
-    const { member } = form.controls;
-
-    if (member.errors === null) {
+  addMember(member: HTMLInputElement) {
+    if (member.value.trim().length >= 2) {
       this.todoService.addNewMember(member.value.trim());
+      member.style.border = '2px solid green';
+      member.value = '';
+      setTimeout(() => {
+        member.style.border = 'none';
+      }, 500);
+    } else {
+      alert('Member name is too short');
     }
   }
 }
