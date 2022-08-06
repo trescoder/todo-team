@@ -11,13 +11,17 @@ import { TodoService } from '../services/todo.service';
 export class AddTaskComponent implements OnInit, DoCheck {
   public members: Member[] = [];
   private taskMembers: Member[] = [];
+  private selectedMembers: any[] = [];
 
   constructor(private todoService: TodoService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.members = this.todoService.getMembers();
+    console.log('on init');
+  }
 
   ngDoCheck(): void {
-    this.members = this.todoService.getMembers();
+    console.log('on check');
   }
 
   addTask(form: any) {
@@ -30,7 +34,11 @@ export class AddTaskComponent implements OnInit, DoCheck {
           title: taskTitle.value.trim(),
         };
         this.todoService.addNewTask(task);
-        // this.taskMembers = [];
+        this.taskMembers = [];
+        this.selectedMembers.forEach((li) => {
+          li.classList.remove('active');
+        });
+        this.selectedMembers = [];
       } else {
         //todo: alert to select at least one member
       }
@@ -41,12 +49,15 @@ export class AddTaskComponent implements OnInit, DoCheck {
 
   selectedMember(member: Member, liElement: HTMLElement) {
     liElement.classList.toggle('active');
+    if (!this.selectedMembers.some((li) => li === liElement)) {
+      this.selectedMembers.push(liElement);
+    }
+
     if (!this.taskMembers.some((m) => m.id == member.id)) {
       this.taskMembers.push(member);
     } else {
       const index = this.taskMembers.findIndex((m) => m.id === member.id);
       this.taskMembers.splice(index, 1);
     }
-    console.log(this.taskMembers);
   }
 }
