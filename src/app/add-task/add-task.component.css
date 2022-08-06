@@ -18,15 +18,23 @@ label {
   padding: 0;
 }
 
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 li {
   list-style-type: none;
   height: 50px;
   width: 50px;
+  margin: 5px;
   line-height: 50px;
   text-align: center;
+  background-color: darkgray;
+  border-radius: 50%;
+  font-weight: 900;
 }
 
 .active {
-  border-radius: 50%;
   border: 2px solid green;
 }
