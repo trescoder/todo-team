@@ -10,7 +10,6 @@ import { TodoService } from '../services/todo.service';
 })
 export class AddTaskComponent implements OnInit, DoCheck {
   public members: Member[] = [];
-  public tasks: Task[] = [];
   private taskMembers: Member[] = [];
 
   constructor(private todoService: TodoService) {}
@@ -18,7 +17,6 @@ export class AddTaskComponent implements OnInit, DoCheck {
   ngOnInit(): void {}
 
   ngDoCheck(): void {
-    this.members = this.todoService.getMembers();
     this.members = this.todoService.getMembers();
   }
 
@@ -32,7 +30,7 @@ export class AddTaskComponent implements OnInit, DoCheck {
           title: taskTitle.value.trim(),
         };
         this.todoService.addNewTask(task);
-        this.taskMembers = [];
+        // this.taskMembers = [];
       } else {
         //todo: alert to select at least one member
       }
@@ -41,7 +39,8 @@ export class AddTaskComponent implements OnInit, DoCheck {
     }
   }
 
-  selectedMember(member: Member) {
+  selectedMember(member: Member, liElement: HTMLElement) {
+    liElement.classList.toggle('active');
     if (!this.taskMembers.some((m) => m.id == member.id)) {
       this.taskMembers.push(member);
     } else {

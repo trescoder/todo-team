@@ -22,8 +22,12 @@
   <!-- Members Section -->
   <div>
     <ul>
-      <li *ngFor="let member of members" (click)="selectedMember(member)">
-        {{ member.name }}
+      <li
+        #liElement
+        *ngFor="let member of members"
+        (click)="selectedMember(member, liElement)"
+      >
+        {{ member.name | slice: 0:2 }}
       </li>
     </ul>
   </div>

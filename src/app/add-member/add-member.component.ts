@@ -15,7 +15,7 @@ export class AddMemberComponent implements OnInit {
     const { member } = form.controls;
 
     if (member.errors === null) {
-      this.todoService.addNewMember(member.value);
+      this.todoService.addNewMember(member.value.trim());
     }
   }
 }
