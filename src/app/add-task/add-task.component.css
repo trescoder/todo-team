@@ -22,8 +22,8 @@ ul {
   display: flex;
   flex-wrap: wrap;
   width: 500px;
-  height: 110px;
-  justify-content: space-evenly;
+  height: 144px;
+  justify-content: space-between;
   overflow-y: hidden;
 }
 
@@ -35,12 +35,15 @@ li {
   list-style-type: none;
   height: 50px;
   width: 50px;
-  margin: 15px;
+  margin: 10px;
   line-height: 50px;
   text-align: center;
-  background-color: darkgray;
+  background-color: #89d0f9;
   border-radius: 50%;
+  border: 2px solid #016e87;
   font-weight: 900;
+  color: #003b48;
+  font-family: helvetica, sans-serif;
 }
 
 li:hover {
@@ -69,7 +72,7 @@ button {
   width: 97%;
   margin: 0 auto;
   display: block;
-  padding: 3px;
+  padding: 7px;
   border-radius: 10px;
   border-style: double;
   background-color: #bce0ff;
