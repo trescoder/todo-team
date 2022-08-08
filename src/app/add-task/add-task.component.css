@@ -64,3 +64,21 @@ li:hover {
 .active {
   border: 2px solid green;
 }
+
+button {
+  width: 97%;
+  margin: 0 auto;
+  display: block;
+  padding: 3px;
+  border-radius: 10px;
+  border-style: double;
+  background-color: #bce0ff;
+  border-color: #42a7ff;
+}
+
+button:hover {
+  background-color: #42a7ff;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
