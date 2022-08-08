@@ -1,6 +1,5 @@
 <form #addTaskForm="ngForm" (ngSubmit)="addTask(addTaskForm)">
   <div class="inputs">
-    <label for="title">Task Title</label>
     <input
       type="text"
       id="task-title"
@@ -20,7 +19,7 @@
     ></textarea>
   </div>
   <!-- Members Section -->
-  <div>
+  <div *ngIf="members.length > 0">
     <ul>
       <li
         #liElement

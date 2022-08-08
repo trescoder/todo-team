@@ -47,6 +47,20 @@ li:hover {
   cursor: pointer;
 }
 
+#task-title {
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  font-family: monospace;
+}
+
+#task-details {
+  border-radius: 10px;
+  height: 300px;
+}
+
 .active {
   border: 2px solid green;
 }
