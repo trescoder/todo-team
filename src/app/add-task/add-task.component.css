@@ -22,8 +22,9 @@ ul {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  height: 144px;
-  justify-content: space-between;
+  height: auto;
+  max-height: 144px;
+  justify-content: space-evenly;
   overflow-y: hidden;
 }
 
@@ -38,11 +39,11 @@ li {
   margin: 10px;
   line-height: 50px;
   text-align: center;
-  background-color: #89d0f9;
+  background-color: #a8dadc;
   border-radius: 50%;
-  border: 2px solid #016e87;
+  border: 2px solid #1d3557;
   font-weight: 900;
-  color: #003b48;
+  color: #1d3557;
   font-family: helvetica, sans-serif;
 }
 
@@ -65,7 +66,9 @@ li:hover {
 }
 
 .active {
-  border: 2px solid green;
+  background-color: #457b9d;
+  color: #f1faee;
+  /* border: 2px solid #049104; */
 }
 
 button {
@@ -75,8 +78,8 @@ button {
   padding: 7px;
   border-radius: 10px;
   border-style: double;
-  background-color: #bce0ff;
-  border-color: #42a7ff;
+  background-color: #f1faee;
+  border-color: #1d3557;
 }
 
 button:hover {
