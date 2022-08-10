@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { TodoService } from '../services/todo.service';
 
 @Component({
@@ -7,20 +7,30 @@ import { TodoService } from '../services/todo.service';
   styleUrls: ['./add-member.component.css'],
 })
 export class AddMemberComponent implements OnInit {
+  @ViewChild('msgInfo') msgInfoElement?: ElementRef<HTMLDivElement>;
+  public msg: string = '';
+
   constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {}
 
   addMember(member: HTMLInputElement) {
+    this.msgInfoElement?.nativeElement.classList.remove('success');
+    this.msgInfoElement?.nativeElement.classList.remove('error');
+
     if (member.value.trim().length >= 2) {
-      this.todoService.addNewMember(member.value.trim());
-      member.style.border = '2px solid green';
+      let { msg, ok } = this.todoService.addNewMember(member.value.trim());
+      this.msg = msg;
       member.value = '';
-      setTimeout(() => {
-        member.style.border = 'none';
-      }, 500);
+      if (ok) {
+        this.msgInfoElement?.nativeElement.classList.add('success');
+        setTimeout(() => {
+          this.msg = '';
+        }, 1000);
+      }
     } else {
-      alert('Member name is too short');
+      this.msgInfoElement?.nativeElement.classList.add('error');
+      this.msg = 'Member name is too short';
     }
   }
 }

@@ -5,10 +5,45 @@ label {
   margin-bottom: 10px;
 }
 
+label {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
 input {
   background-color: #fff;
   padding: 3px;
   border: none;
   border-radius: 5px;
   margin-left: 4px;
+}
+
+button {
+  width: 97%;
+  margin: 0 auto;
+  display: block;
+  padding: 7px;
+  border-radius: 10px;
+  border-style: double;
+  background-color: #8dc4f3;
+  border-color: #1d3557;
+}
+
+/* Info Message Styles */
+.info-msg {
+  width: 100%;
+  font-weight: 900;
+  font-size: 0.7rem;
+  font-family: monospace;
+  letter-spacing: 1px;
+  margin: 5px auto;
+  text-align: center;
+}
+
+.success {
+  color: #019701;
+}
+
+.error {
+  color: #81000a;
 }

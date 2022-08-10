@@ -1,15 +1,10 @@
 <form #addTaskForm="ngForm" (ngSubmit)="addMember(member)">
   <div>
-    <label for="title">Name</label>
-    <input
-      #member
-      type="text"
-      id="member"
-      name="member"
-      placeholder="member name"
-      required
-      ngModel
-    />
+    <label for="title">Member Name</label>
+    <input #member type="text" id="member" name="member" required ngModel />
+  </div>
+  <div #msgInfo id="msgInfo" class="info-msg" *ngIf="msg.length > 0">
+    {{ msg }}
   </div>
   <!-- Members Section -->
   <div>
